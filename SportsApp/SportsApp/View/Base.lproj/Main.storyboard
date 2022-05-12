@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Agb-dY-fls">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Agb-dY-fls">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,6 +85,74 @@
             </objects>
             <point key="canvasLocation" x="366.66666666666669" y="-494.19642857142856"/>
         </scene>
+        <!--Custom Table View Controller-->
+        <scene sceneID="6Tl-Mp-9Ie">
+            <objects>
+                <viewController id="2GG-eu-tkr" customClass="CustomTableViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dpW-fg-yxQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YGe-ja-Q0z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="Vkn-Lu-w9p" customClass="CustomTableViewCell" customModule="SportsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vkn-Lu-w9p" id="Cah-W9-IEV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="06A-kP-mtM">
+                                                    <rect key="frame" x="13" y="11" width="388" height="78"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW9-6D-Ys8">
+                                                            <rect key="frame" x="95" y="28" width="212" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxc-GQ-dKu">
+                                                            <rect key="frame" x="315" y="23" width="59" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="YouTube"/>
+                                                            <connections>
+                                                                <action selector="cellYoutubeButton:" destination="Vkn-Lu-w9p" eventType="touchUpInside" id="SLz-hc-rL7"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONe-Ie-nYl">
+                                                            <rect key="frame" x="20" y="11" width="67" height="55"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImage" destination="ONe-Ie-nYl" id="9Hh-tK-GEc"/>
+                                            <outlet property="cellLable" destination="OW9-6D-Ys8" id="B52-Ku-qz1"/>
+                                            <outlet property="cellView" destination="06A-kP-mtM" id="Ga1-3d-63F"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LOl-89-luQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="YGe-ja-Q0z" id="2jw-BM-0Je"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kj3-yr-PwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082.608695652174" y="-494.19642857142856"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mhe-3R-OF9">
             <objects>
@@ -116,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060.8695652173915" y="-11.383928571428571"/>
+            <point key="canvasLocation" x="1055" y="381"/>
         </scene>
         <!--All Sports-->
         <scene sceneID="dVs-Mn-b0v">
@@ -139,7 +207,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
     </resources>
 </document>

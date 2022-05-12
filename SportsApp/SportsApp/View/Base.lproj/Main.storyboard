@@ -134,9 +134,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellImage" destination="ONe-Ie-nYl" id="9Hh-tK-GEc"/>
-                                            <outlet property="cellLable" destination="OW9-6D-Ys8" id="B52-Ku-qz1"/>
-                                            <outlet property="cellView" destination="06A-kP-mtM" id="Ga1-3d-63F"/>
+                                            <outlet property="cellImage" destination="ONe-Ie-nYl" id="LXt-sn-In6"/>
+                                            <outlet property="cellLable" destination="OW9-6D-Ys8" id="sIK-ab-R3a"/>
+                                            <outlet property="cellView" destination="06A-kP-mtM" id="xSq-Ll-kd3"/>
+                                            <outlet property="cellYoutubeButton" destination="wxc-GQ-dKu" id="GJ5-zO-1Of"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -146,7 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="LOl-89-luQ"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="YGe-ja-Q0z" id="2jw-BM-0Je"/>
+                        <outlet property="tableView" destination="YGe-ja-Q0z" id="lWE-k7-vjS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj3-yr-PwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

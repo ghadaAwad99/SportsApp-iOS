@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		20CD227CE4DC20E3434F58BD /* Pods_SportsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D753F01EC143A54EBFC6821 /* Pods_SportsApp.framework */; };
+		685F8FD6282DBF9C0074129F /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8FD5282DBF9C0074129F /* CustomTableViewController.swift */; };
+		685F8FD8282DBFB70074129F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8FD7282DBFB70074129F /* CustomTableViewCell.swift */; };
 		7FB12158282D67FB004D8039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB12157282D67FB004D8039 /* AppDelegate.swift */; };
 		7FB1215A282D67FB004D8039 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB12159282D67FB004D8039 /* SceneDelegate.swift */; };
 		7FB1215C282D67FB004D8039 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1215B282D67FB004D8039 /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		036480CDD14554B8C52405CB /* Pods-SportsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsApp.debug.xcconfig"; path = "Target Support Files/Pods-SportsApp/Pods-SportsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1D753F01EC143A54EBFC6821 /* Pods_SportsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		685F8FD5282DBF9C0074129F /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		685F8FD7282DBFB70074129F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		7FB12154282D67FB004D8039 /* SportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB12157282D67FB004D8039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB12159282D67FB004D8039 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +62,6 @@
 				036480CDD14554B8C52405CB /* Pods-SportsApp.debug.xcconfig */,
 				B7B4697832B10DF48B6A0973 /* Pods-SportsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -68,6 +71,31 @@
 				1D753F01EC143A54EBFC6821 /* Pods_SportsApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		685F8FD2282DBD560074129F /* Leaguess */ = {
+			isa = PBXGroup;
+			children = (
+				685F8FD4282DBF510074129F /* Presenter */,
+				685F8FD3282DBF450074129F /* View */,
+			);
+			path = Leaguess;
+			sourceTree = "<group>";
+		};
+		685F8FD3282DBF450074129F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				685F8FD5282DBF9C0074129F /* CustomTableViewController.swift */,
+				685F8FD7282DBFB70074129F /* CustomTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		685F8FD4282DBF510074129F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		7FB1214B282D67FB004D8039 = {
@@ -109,6 +137,7 @@
 		7FB1216E282D7E0A004D8039 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				685F8FD2282DBD560074129F /* Leaguess */,
 				7FB12174282D7E8D004D8039 /* AllSports */,
 			);
 			path = Module;
@@ -303,10 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685F8FD8282DBFB70074129F /* CustomTableViewCell.swift in Sources */,
 				7FB1215C282D67FB004D8039 /* ViewController.swift in Sources */,
 				7FB12158282D67FB004D8039 /* AppDelegate.swift in Sources */,
 				7FB12162282D67FC004D8039 /* SportsApp.xcdatamodeld in Sources */,
 				7FB12179282D7F2C004D8039 /* AllSportsCollectionView.swift in Sources */,
+				685F8FD6282DBF9C0074129F /* CustomTableViewController.swift in Sources */,
 				7FB1217F282D9036004D8039 /* AllSportsCustomCell.swift in Sources */,
 				7FB1215A282D67FB004D8039 /* SceneDelegate.swift in Sources */,
 				7FB1217B282D7F79004D8039 /* AllSportsViewController.swift in Sources */,

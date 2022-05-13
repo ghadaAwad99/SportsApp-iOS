@@ -49,11 +49,11 @@ extension AllSportsViewController : UICollectionViewDelegate, UICollectionViewDa
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AllSportsCustomCell
-   /*
-    cell.myImage.kf.setImage(with: URL(string: sportsResponse[indexPath.row].strSportThumb))
-       cell.nameLable.text = sportsResponse[indexPath.row].strSport
+   
+    //cell.myImage.kf.setImage(with: URL(string: sportsResponse[indexPath.row].strSportThumb))
+       //cell.nameLable.text = sportsResponse[indexPath.row].strSport
        cell.myView.layer.cornerRadius = 20
-       cell.myView.backgroundColor = UIColor.lightGray*/
+       cell.myView.backgroundColor = UIColor.lightGray
     
         return cell
 }

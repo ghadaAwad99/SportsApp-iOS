@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20CD227CE4DC20E3434F58BD /* Pods_SportsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D753F01EC143A54EBFC6821 /* Pods_SportsApp.framework */; };
 		685F8FD6282DBF9C0074129F /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8FD5282DBF9C0074129F /* CustomTableViewController.swift */; };
 		685F8FD8282DBFB70074129F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8FD7282DBFB70074129F /* CustomTableViewCell.swift */; };
 		7FB12158282D67FB004D8039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB12157282D67FB004D8039 /* AppDelegate.swift */; };
@@ -31,8 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		036480CDD14554B8C52405CB /* Pods-SportsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsApp.debug.xcconfig"; path = "Target Support Files/Pods-SportsApp/Pods-SportsApp.debug.xcconfig"; sourceTree = "<group>"; };
-		1D753F01EC143A54EBFC6821 /* Pods_SportsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		685F8FD5282DBF9C0074129F /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		685F8FD7282DBFB70074129F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		7FB12154282D67FB004D8039 /* SportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +52,6 @@
 		7FCFC409282EC00300DED847 /* AllSportsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSportsPresenterProtocol.swift; sourceTree = SOURCE_ROOT; };
 		7FCFC40B282EC02900DED847 /* AllSportsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSportsPresenter.swift; sourceTree = SOURCE_ROOT; };
 		7FCFC40D282EC08000DED847 /* AllSportsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSportsViewProtocol.swift; sourceTree = "<group>"; };
-		B7B4697832B10DF48B6A0973 /* Pods-SportsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsApp.release.xcconfig"; path = "Target Support Files/Pods-SportsApp/Pods-SportsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20CD227CE4DC20E3434F58BD /* Pods_SportsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,18 +68,8 @@
 		0F7EB6627E18D8CA32E7CCE0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				036480CDD14554B8C52405CB /* Pods-SportsApp.debug.xcconfig */,
-				B7B4697832B10DF48B6A0973 /* Pods-SportsApp.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		4C4FC24D949DED56CB252A0B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1D753F01EC143A54EBFC6821 /* Pods_SportsApp.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		685F8FD2282DBD560074129F /* Leaguess */ = {
@@ -118,7 +103,6 @@
 				7FB12156282D67FB004D8039 /* SportsApp */,
 				7FB12155282D67FB004D8039 /* Products */,
 				0F7EB6627E18D8CA32E7CCE0 /* Pods */,
-				4C4FC24D949DED56CB252A0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,7 +228,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FB1216B282D6824004D8039 /* Build configuration list for PBXNativeTarget "SportsApp" */;
 			buildPhases = (
-				FC7BF346321440C5E4A0AABA /* [CP] Check Pods Manifest.lock */,
 				7FB12150282D67FB004D8039 /* Sources */,
 				7FB12151282D67FB004D8039 /* Frameworks */,
 				7FB12152282D67FB004D8039 /* Resources */,
@@ -305,31 +288,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FC7BF346321440C5E4A0AABA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SportsApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7FB12150282D67FB004D8039 /* Sources */ = {
@@ -492,7 +450,6 @@
 		};
 		7FB1216C282D6824004D8039 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 036480CDD14554B8C52405CB /* Pods-SportsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -510,7 +467,6 @@
 		};
 		7FB1216D282D6824004D8039 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7B4697832B10DF48B6A0973 /* Pods-SportsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

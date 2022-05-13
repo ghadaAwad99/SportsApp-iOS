@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Agb-dY-fls">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Agb-dY-fls">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,29 +35,53 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qKw-Ar-hxp" customClass="AllSportsCollectionView" customModule="SportsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZbM-Kb-9zG">
-                                    <size key="itemSize" width="185" height="196"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="ZbM-Kb-9zG">
+                                    <size key="itemSize" width="162" height="90"/>
+                                    <size key="estimatedItemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="6oK-6L-AH5" customClass="AllSportsCustomCell" customModule="SportsApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="185" height="196"/>
+                                        <rect key="frame" x="10" y="10" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="phu-XI-hAm">
-                                            <rect key="frame" x="0.0" y="0.0" width="185" height="196"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhE-93-uUa">
-                                                    <rect key="frame" x="10" y="10" width="165" height="176"/>
+                                                <view contentMode="scaleToFill" id="RhC-nJ-bIw">
+                                                    <rect key="frame" x="8" y="0.0" width="170" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhE-93-uUa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="170" height="155"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmF-G0-aDD">
+                                                            <rect key="frame" x="10" y="134.5" width="150" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="yhE-93-uUa" firstAttribute="top" secondItem="RhC-nJ-bIw" secondAttribute="top" id="GKb-LX-0AJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="AmF-G0-aDD" secondAttribute="bottom" constant="5" id="Gbu-PB-mHX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yhE-93-uUa" secondAttribute="trailing" id="R1J-c6-Lts"/>
+                                                        <constraint firstAttribute="trailing" secondItem="AmF-G0-aDD" secondAttribute="trailing" constant="10" id="R9c-Oy-0T3"/>
+                                                        <constraint firstItem="AmF-G0-aDD" firstAttribute="leading" secondItem="RhC-nJ-bIw" secondAttribute="leading" constant="10" id="cXh-E4-u4R"/>
+                                                        <constraint firstItem="yhE-93-uUa" firstAttribute="bottom" secondItem="AmF-G0-aDD" secondAttribute="bottom" id="d8Y-g0-3Ti"/>
+                                                        <constraint firstItem="yhE-93-uUa" firstAttribute="leading" secondItem="RhC-nJ-bIw" secondAttribute="leading" id="wqN-yk-MWs"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="185" height="196"/>
+                                        <size key="customSize" width="150" height="150"/>
                                         <connections>
                                             <outlet property="myImage" destination="yhE-93-uUa" id="s8Z-2y-70p"/>
+                                            <outlet property="myView" destination="RhC-nJ-bIw" id="5Ub-TD-ygP"/>
+                                            <outlet property="nameLable" destination="AmF-G0-aDD" id="NVw-w0-ecr"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -208,7 +232,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart.fill" catalog="system" width="64" height="54"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="heart.fill" catalog="system" width="32" height="32"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
     </resources>
 </document>

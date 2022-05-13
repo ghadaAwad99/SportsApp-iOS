@@ -51,7 +51,7 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         let country =  coun[indexPath.row]
         cell.cellLable.text = country
-        cell.cellImage.image = UIImage(named : "Unknown-2")
+        cell.cellImage.image = UIImage(named : "xmen.jpeg")
         
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
         cell.cellImage.layer.cornerRadius = cell.cellImage.frame.height / 2

@@ -10,6 +10,10 @@ import UIKit
 
 class AllSportsCustomCell: UICollectionViewCell {
     
+    @IBOutlet weak var myView: UIView!
+    
     @IBOutlet weak var myImage: UIImageView!
+    
+    @IBOutlet weak var nameLable: UILabel!
     
 }

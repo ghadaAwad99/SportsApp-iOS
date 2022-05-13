@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class AllSportsViewController: UIViewController{
+    
+    var sportsResponse : [SportModel] = []
 
    
        @IBOutlet weak var myCollectionView: AllSportsCollectionView!
@@ -33,7 +36,7 @@ class AllSportsViewController: UIViewController{
 extension AllSportsViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat =  50
+        let padding: CGFloat = 40
         let collectionViewSize = collectionView.frame.size.width - padding
         
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
@@ -46,16 +49,11 @@ extension AllSportsViewController : UICollectionViewDelegate, UICollectionViewDa
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AllSportsCustomCell
-    
-    cell.myImage.image = UIImage(named: "picture.png")
-    /*cell.layer.shadowColor = UIColor.lightGray.cgColor
-    cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-    cell.layer.shadowRadius = 10.0
-    cell.layer.shadowOpacity = 5.0
-    cell.layer.masksToBounds = false
-    cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-    cell.clipsToBounds = false
-    cell.contentView.layer.masksToBounds = true*/
+   /*
+    cell.myImage.kf.setImage(with: URL(string: sportsResponse[indexPath.row].strSportThumb))
+       cell.nameLable.text = sportsResponse[indexPath.row].strSport
+       cell.myView.layer.cornerRadius = 20
+       cell.myView.backgroundColor = UIColor.lightGray*/
     
         return cell
 }

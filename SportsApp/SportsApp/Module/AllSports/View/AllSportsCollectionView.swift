@@ -20,10 +20,5 @@ class AllSportsCollectionView: UICollectionView {
 
 }
 
-extension AllSportsCollectionView  {
-    
-
-    
-}
 
 

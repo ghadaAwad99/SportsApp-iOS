@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		7FCFC40A282EC00300DED847 /* AllSportsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFC409282EC00300DED847 /* AllSportsPresenterProtocol.swift */; };
 		7FCFC40C282EC02900DED847 /* AllSportsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFC40B282EC02900DED847 /* AllSportsPresenter.swift */; };
 		7FCFC40E282EC08000DED847 /* AllSportsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFC40D282EC08000DED847 /* AllSportsViewProtocol.swift */; };
+		7FD17C03282F43DE00A0513C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD17C02282F43DE00A0513C /* Kingfisher */; };
+		7FD17C09282F467900A0513C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD17C08282F467900A0513C /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD17C03282F43DE00A0513C /* Kingfisher in Frameworks */,
+				7FD17C09282F467900A0513C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +241,10 @@
 			dependencies = (
 			);
 			name = SportsApp;
+			packageProductDependencies = (
+				7FD17C02282F43DE00A0513C /* Kingfisher */,
+				7FD17C08282F467900A0513C /* Alamofire */,
+			);
 			productName = SportsApp;
 			productReference = 7FB12154282D67FB004D8039 /* SportsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -265,6 +273,10 @@
 				Base,
 			);
 			mainGroup = 7FB1214B282D67FB004D8039;
+			packageReferences = (
+				7FD17C01282F43DE00A0513C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7FD17C07282F467900A0513C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 7FB12155282D67FB004D8039 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -504,6 +516,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7FD17C01282F43DE00A0513C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.4;
+			};
+		};
+		7FD17C07282F467900A0513C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7FD17C02282F43DE00A0513C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FD17C01282F43DE00A0513C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		7FD17C08282F467900A0513C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FD17C07282F467900A0513C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7FB12160282D67FC004D8039 /* SportsApp.xcdatamodeld */ = {

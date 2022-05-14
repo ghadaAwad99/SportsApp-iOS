@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+import Alamofire
 
 class CustomTableViewController: UIViewController {
 
@@ -51,7 +53,9 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         let country =  coun[indexPath.row]
         cell.cellLable.text = country
-        cell.cellImage.image = UIImage(named : "xmen.jpeg")
+       // cell.cellImage.image = UIImage(named : "xmen.jpeg")
+        cell.cellImage.kf.setImage(with: URL(string :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIcxm1tSJphluNimxurlape3Q9nhLcX3_apA&usqp=CAU"), placeholder: nil, options: nil, progressBlock: nil)
+        
         
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
         cell.cellImage.layer.cornerRadius = cell.cellImage.frame.height / 2

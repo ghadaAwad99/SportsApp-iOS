@@ -7,6 +7,8 @@
 //
 
 import Foundation
-protocol AllSportsViewProtocol {
-    
+
+protocol AllSportsViewProtocol: AnyObject {
+    func renderCollectionView()
 }
+

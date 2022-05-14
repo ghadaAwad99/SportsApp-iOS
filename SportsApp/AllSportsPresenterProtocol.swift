@@ -8,5 +8,9 @@
 
 import Foundation
 protocol AllSportsPresenterProtocol {
-    
+     func getAllSports()
+    // weak var allSportsView: AllSportsViewProtocol
+     //var result : [SportModel]
+     
+     func attachView(view: AllSportsViewProtocol)
 }

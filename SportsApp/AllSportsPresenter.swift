@@ -7,8 +7,30 @@
 //
 
 import Foundation
-class AllSportsPresenter {
+class AllSportsPresenter : AllSportsPresenterProtocol {
     
-    var allSportsView: AllSportsViewProtocol?
+    weak var allSportsView: AllSportsViewProtocol!
+    var result : [SportModel]!
+    
+    func attachView(view: AllSportsViewProtocol) {
+        self.allSportsView = view
+    }
+    
+    let network = AllSportsNetworkService()
+    
+    func getAllSports() {
+        print("inside getAllSports presenter")
+        network.fetchAllSports {
+            [weak self] (response) in
+            guard let response = response else {return}
+            print ("AllSportsPresenter " + (response.sports[0].strSport ))
+            self?.result = response.sports
+            print("result: \(self?.result.count ?? 0)")
+            
+            DispatchQueue.main.async {
+                self?.allSportsView.renderCollectionView()
+            }
+        }
+    }
     
 }

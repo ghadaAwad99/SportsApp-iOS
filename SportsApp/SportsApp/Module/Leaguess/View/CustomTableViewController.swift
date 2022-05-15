@@ -13,6 +13,8 @@ import Alamofire
 class CustomTableViewController: UIViewController {
 
      var coun = ["jjjjhh" , "reree" , "uiuiuiu"]
+    var sportName : String = ""
+  
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,6 +26,8 @@ class CustomTableViewController: UIViewController {
         // adding style
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
+        
+        print("sport name in table view \(sportName)")
         
         // Do any additional setup after loading the view.
     }

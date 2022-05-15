@@ -7,6 +7,6 @@
 //
 
 import Foundation
-struct Sports: Decodable {
+class Sports: Decodable {
   let sports: [SportModel]
 }

@@ -16,7 +16,7 @@ class AllSportsPresenter : AllSportsPresenterProtocol {
         self.allSportsView = view
     }
     
-    let network = AllSportsNetworkService()
+    let network = SportsNetworkService()
     
     func getAllSports() {
         print("inside getAllSports presenter")

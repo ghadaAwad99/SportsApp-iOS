@@ -112,7 +112,7 @@
         <!--Custom Table View Controller-->
         <scene sceneID="6Tl-Mp-9Ie">
             <objects>
-                <viewController id="2GG-eu-tkr" customClass="CustomTableViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="leagues" id="2GG-eu-tkr" customClass="CustomTableViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpW-fg-yxQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

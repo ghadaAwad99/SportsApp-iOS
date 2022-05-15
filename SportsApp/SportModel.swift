@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct SportModel: Decodable {
-  let idSport: String
+class SportModel: Decodable {
+  let idSport: String 
   let strSport: String
   let strFormat: String
   let strSportThumb: String

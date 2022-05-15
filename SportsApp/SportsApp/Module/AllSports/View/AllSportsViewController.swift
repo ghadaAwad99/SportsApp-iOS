@@ -48,6 +48,13 @@ extension AllSportsViewController :AllSportsViewProtocol, UICollectionViewDelega
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
     
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           
+            let secondVC = self.storyboard?.instantiateViewController(identifier: "leagues") as! CustomTableViewController
+        secondVC.sportName = sportsResponse[indexPath.row].strSport
+                    self.navigationController?.pushViewController(secondVC, animated: true)
+       }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.sportsResponse.count

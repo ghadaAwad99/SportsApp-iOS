@@ -9,22 +9,28 @@
 import Foundation
 class EventsPresenter {
     
-    var view : EventsViewProtocol!
+    var view : EventsViewController!
     var result : [Event]!
     
-    func attachView(view: EventsViewProtocol){
+    func attachView(view: EventsViewController){
         self.view = view
     }
     
     let network = SportsNetworkService()
     
-    /*func getEventsByLeagueId(leagueId : String){
-        network.getEventsByLeagueId(leagueId: leagueId, completionHandler: { [weak self] in
-            guard let response = response else {return}
+    func getEventsByLeagueId(leagueId : String){
+        print("inside events presenter")
+        network.getEventsByLeagueId(leagueId: leagueId, completionHandler: {
+            [weak self] (response) in
+            guard let response = response else {return print("else")}
             self?.result = response.events
+            print("response presener " + response.events[0].strEvent)
             
+            DispatchQueue.main.async {
+                self?.view.renderCollectionView()
+            }
         })
         
       
-    }*/
+    }
 }

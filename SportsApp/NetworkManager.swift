@@ -32,19 +32,12 @@ class SportsNetworkService  : AllSportsService {
         AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?" , method: .get, parameters: param, encoding: URLEncoding.queryString)
             .validate()
             .responseDecodable(of: AllEvents.self) { (response) in
-                guard let sportsResponse = response.value?.events else {
+                guard let sportsResponse = response.value else {
                     print("else")
                     return }
-                print(sportsResponse[0].idLeague)
-                print(sportsResponse[0].strEvent)
-                print(sportsResponse[0].strSport)
-                print(sportsResponse[0].strHomeTeam)
-                
-                print(sportsResponse[0].strAwayTeam)
-                print(sportsResponse[0].intHomeScore)
-                print(sportsResponse[0].intAwayScore)
-                print(sportsResponse[0].dateEvent)
-                print(sportsResponse[0].strTime)
+                completionHandler(sportsResponse)
+                print("SportsNetworkService " + sportsResponse.events[0].idLeague)
+                print("SportsNetworkService " + sportsResponse.events[0].strEvent)
         }
     }
 }

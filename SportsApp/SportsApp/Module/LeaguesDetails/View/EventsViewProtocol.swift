@@ -7,6 +7,7 @@
 //
 
 import Foundation
-class EventsViewProtocol {
-    
+protocol EventsViewProtocol {
+     func renderCollectionView()
 }
+

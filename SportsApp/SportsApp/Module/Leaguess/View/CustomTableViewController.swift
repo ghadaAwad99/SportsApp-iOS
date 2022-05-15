@@ -33,7 +33,7 @@ class CustomTableViewController: UIViewController {
         
         presenter = LeaguesPresenter()
         presenter.attachView(view: self)
-        presenter.getLeagues(strSport:"Soccer")
+        presenter.getLeagues(strSport:sportName)
 
     }
     
@@ -79,6 +79,6 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
     
     func renderTableView() {
               self.items = presenter.result
-              tableview.reloadData()
+        tableView.reloadData()
           }
 }

@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol LeaguesViewProtocol: AnyObject {
+    func renderTableView()
+}
+
 protocol LeaguesPresenterProtocol {
     func getLeagues(strSport : String)
     func attachView(view: LeaguesViewProtocol)

@@ -10,6 +10,22 @@ import UIKit
 import Kingfisher
 import Alamofire
 
+struct AllLeagues: Decodable {
+
+  let countries: [Leagues]
+
+}
+
+struct Leagues: Decodable {
+
+    let idLeague: String
+     let strSport: String
+    let strLeague: String
+    let strYoutube: String
+    let strBadge: String
+
+}
+
 class CustomTableViewController: UIViewController {
 
     var items: [Leagues] = []

@@ -12,7 +12,9 @@ import Alamofire
 
 class CustomTableViewController: UIViewController {
 
-     var coun = ["jjjjhh" , "reree" , "uiuiuiu"]
+    var items: [Leagues] = []
+    var presenter : LeaguesPresenter!
+    
     var sportName : String = ""
   
     @IBOutlet weak var tableView: UITableView!
@@ -29,7 +31,10 @@ class CustomTableViewController: UIViewController {
         
         print("sport name in table view \(sportName)")
         
-        // Do any additional setup after loading the view.
+        presenter = LeaguesPresenter()
+        presenter.attachView(view: self)
+        presenter.getLeagues(strSport:"Soccer")
+
     }
     
 
@@ -44,29 +49,36 @@ class CustomTableViewController: UIViewController {
     */
 
 }
-extension CustomTableViewController : UITableViewDataSource , UITableViewDelegate{
+extension CustomTableViewController : UITableViewDataSource , UITableViewDelegate , LeaguesViewProtocol {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coun.count
+        return items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-        let country =  coun[indexPath.row]
-        cell.cellLable.text = country
-       // cell.cellImage.image = UIImage(named : "xmen.jpeg")
-        cell.cellImage.kf.setImage(with: URL(string :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIcxm1tSJphluNimxurlape3Q9nhLcX3_apA&usqp=CAU"), placeholder: nil, options: nil, progressBlock: nil)
         
+        let item = items[indexPath.row]
+        cell.cellLable.text = item.strLeague
+        let imageUrl = item.strBadge
+        cell.cellImage.kf.setImage(with: URL(string : imageUrl), placeholder: nil, options: nil, progressBlock: nil)
         
+        // cell style
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
         cell.cellImage.layer.cornerRadius = cell.cellImage.frame.height / 2
+        cell.cellImage.layer.cornerRadius = cell.cellImage.frame.width / 2
         cell.imageView?.clipsToBounds = true
         
-       // cell.cellImage.layer.cornerRadius = cell.cellImage.frame.width / 2
+      
         return cell
         
     }
+    
+    func renderTableView() {
+              self.items = presenter.result
+              tableview.reloadData()
+          }
 }

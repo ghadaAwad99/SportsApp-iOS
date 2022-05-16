@@ -79,6 +79,15 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails")
+        
+        detailsVC.modalPresentationStyle = .fullScreen
+        
+        self.present(detailsVC, animated: true, completion: nil)
+    }
+    
     func renderTableView() {
               self.items = presenter.result
         tableView.reloadData()

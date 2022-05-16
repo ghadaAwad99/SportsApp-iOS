@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TeamsPresenter : TeamssPresenterProtocol {
+class TeamsPresenter : TeamsPresenterProtocol {
   
     var result : [Teams]!
     weak var TeamsView: TeamsViewProtocol!
@@ -17,15 +17,15 @@ class TeamsPresenter : TeamssPresenterProtocol {
         self.TeamsView = view
     }
     
-    let networkService = LeaguesNetworkService()
+    let networkService = TeamsNetworkService()
     
     func getTeams(strLeagues : String) {
         
-        networkService.fetchLeagues (strLeagues: strLeagues , completionHandler: {
+        networkService.fetchTeams(strLeagues: strLeagues , completionHandler: {
             [weak self] (response) in
             guard let response = response else {return}
             self?.result = response.teams
-            print(strSport)
+            print(strLeagues)
             
             DispatchQueue.main.async {
                 self?.TeamsView.renderTeamesCollectionView()

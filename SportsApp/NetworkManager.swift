@@ -76,7 +76,7 @@ protocol TeamsService{
 }
 
 class TeamsNetworkService  : TeamsService {
-    func fetchTeams( strLeagues : String ,completionHandler: @escaping(AllTeams?) -> Void) {
+    func fetchTeams(strLeagues : String ,completionHandler: @escaping(AllTeams?) -> Void) {
         
          let baseUrl : String = "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?"
         
@@ -87,7 +87,7 @@ class TeamsNetworkService  : TeamsService {
                  
                    guard let TeamsResnse = response.value else { return }
                    completionHandler(TeamsResnse)
-                   print(TeamsResnse.teams[0].idLeague)
+                   print(TeamsResnse.teams[0].idTeam)
                   
 
                }

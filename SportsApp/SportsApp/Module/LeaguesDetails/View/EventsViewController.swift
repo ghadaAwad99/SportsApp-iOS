@@ -61,31 +61,51 @@ class EventsViewController : UIViewController {
 extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var returnedSize = CGSize()
          
-//        if (collectionView == myCollectionView){
-//            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.width)
-//        }
-        if (collectionView == teamesCollectionView){
-            return CGSize(width: collectionView.frame.width / 3 , height: collectionView.frame.width / 3)
+       if (collectionView == myCollectionView){
+            returnedSize =  CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.width)
         }
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.width)
+        if (collectionView == teamesCollectionView){
+            returnedSize =  CGSize(width: collectionView.frame.width / 3 , height: collectionView.frame.width / 3)
+       }
+       // return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.width)
+        return returnedSize
 
     }
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // return 10
-          print("array count : \(self.eventsResponse.count)")
+         
+      
         // teams collectionView
-        if(collectionView == teamesCollectionView){
-            return teamsResponse.count
-        }
+       // var arrayCount = 0
+       if(collectionView == teamesCollectionView){
+          print("teams array count : \(self.teamsResponse.count)")
+           return  teamsResponse.count
+       }
+          
+             print("array count : \(self.eventsResponse.count)")
         
-         return self.eventsResponse.count
+         //arrayCount =  self.eventsResponse.count
+        
+        
+        return  self.eventsResponse.count
         
      }
      
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventsCustomCell
+        
+    
+        
+        let cell1 = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        
+          if (collectionView == myCollectionView){
+            
+            var responseCount = eventsResponse.count
+        
+         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventsCustomCell
           
           let event = eventsResponse[indexPath.row]
           
@@ -97,21 +117,25 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
           cell.eventImage.layer.masksToBounds = true
           
           cell.eventImage.kf.setImage(with: URL(string: event.strThumb))
-       
+            
+            return cell
+        }
         // teames collection view
-        if(collectionView == teamesCollectionView){
+       if(collectionView == teamesCollectionView){
             
             let teamsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
                     
-                     let item = items[indexPath.row]
+                     let item = teamsResponse[indexPath.row]
             //  cell.teameName.text = item.strTeam
                      let imageUrl = item.strTeamBadge
-              cell.teamBadgeImage.kf.setImage(with: URL(string : imageUrl), placeholder: nil, options: nil, progressBlock: nil)
+            teamsCell.teamBadgeImage.kf.setImage(with: URL(string : imageUrl), placeholder: nil, options: nil, progressBlock: nil)
                
                      return teamsCell
         }
         
-          return cell
+        print("------------------------this is brfore return---------------")
+        
+          return cell1
       }
     
 }

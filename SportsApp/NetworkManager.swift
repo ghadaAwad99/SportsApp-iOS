@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+// Network for AllSports (featching data from api)
 protocol AllSportsService{
     
     func fetchAllSports(completionHandler: @escaping(Sports?) -> ())
@@ -44,7 +45,7 @@ class SportsNetworkService  : AllSportsService {
 }
 
 
-
+// Network for Leagues (featching data from api)
 protocol LueguesService{
     func fetchLeagues(strSport : String, completionHandler: @escaping(AllLeagues?) -> ())
 }
@@ -68,3 +69,29 @@ class LeaguesNetworkService  : LueguesService {
       
     }
 }
+
+// Ntwork for Teames (featching data from api)
+protocol TeamsService{
+    func fetchTeams(strLeagues : String, completionHandler: @escaping(AllTeams?) -> ())
+}
+
+class TeamsNetworkService  : TeamsService {
+    func fetchTeams( strLeagues : String ,completionHandler: @escaping(AllTeams?) -> Void) {
+        
+         let baseUrl : String = "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?"
+        
+            let param : Parameters = ["l" : strLeagues ]
+            AF.request(baseUrl , method: .get, parameters : param, encoding: URLEncoding.queryString )
+            .validate()
+            .responseDecodable(of: AllTeams.self) { (response) in
+                 
+                   guard let TeamsResnse = response.value else { return }
+                   completionHandler(TeamsResnse)
+                   print(TeamsResnse.teams[0].idLeague)
+                  
+
+               }
+      
+    }
+}
+

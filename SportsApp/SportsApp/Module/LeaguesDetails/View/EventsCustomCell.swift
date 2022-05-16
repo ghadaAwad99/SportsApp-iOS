@@ -10,5 +10,8 @@ import UIKit
 
 class EventsCustomCell: UICollectionViewCell {
     
-    @IBOutlet weak var eventNameLable: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var timeLable: UILabel!
+    @IBOutlet weak var dateLable: UILabel!
+    
 }

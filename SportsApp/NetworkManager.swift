@@ -12,7 +12,7 @@ import Alamofire
 protocol AllSportsService{
     
     func fetchAllSports(completionHandler: @escaping(Sports?) -> ())
-    func getEventsByLeagueId(leagueId: String, completionHandler: @escaping(AllEvents?) -> ())
+    func getEventsByLeagueId(/*leagueId: String , round: String, year: String , */completionHandler: @escaping(AllEvents?) -> ())
 }
 
 class SportsNetworkService  : AllSportsService {
@@ -26,18 +26,19 @@ class SportsNetworkService  : AllSportsService {
                 print("AllSportsNetworkService " + sportsResponse.sports[1].strFormat)
         }
     }
+    // https://www.thesportsdb.com/api/v1/json/2/eventsround.php?r=38&s=2021-2022&id=4328
     
-    func getEventsByLeagueId(leagueId: String = "4617", completionHandler: @escaping(AllEvents?) -> ()) {
-        let param : Parameters = ["id" : leagueId]
-        AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?" , method: .get, parameters: param, encoding: URLEncoding.queryString)
+    func getEventsByLeagueId(/*leagueId: String = "4617", round: String = "38", year: String = "2021-2022",*/ completionHandler: @escaping(AllEvents?) -> ()) {
+       // let param : Parameters = ["id" : leagueId, "r" : round, "s": year]
+        AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsround.php?r=38&s=2021-2022&id=4328" , method: .get, /*parameters: param,*/ encoding: URLEncoding.queryString)
             .validate()
             .responseDecodable(of: AllEvents.self) { (response) in
                 guard let sportsResponse = response.value else {
                     print("else")
                     return }
                 completionHandler(sportsResponse)
-                print("SportsNetworkService " + sportsResponse.events[0].idLeague)
-                print("SportsNetworkService " + sportsResponse.events[0].strEvent)
+            //    print("SportsNetworkService " + sportsResponse.events[0].idLeague)
+           //     print("SportsNetworkService " + sportsResponse.events[0].strEvent)
         }
     }
 }

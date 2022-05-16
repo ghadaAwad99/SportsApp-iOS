@@ -46,7 +46,16 @@ class EventsViewController:UIViewController, EventsViewProtocol, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventsCustomCell
         
-        cell.eventNameLable.text = eventsResponse[indexPath.row].strEvent
+        let event = eventsResponse[indexPath.row]
+        
+        //cell.eventNameLable.text = event.strEvent
+        cell.dateLable.text = event.dateEvent
+        cell.timeLable.text = event.strTime
+        
+        cell.eventImage.layer.cornerRadius = 15
+        cell.eventImage.layer.masksToBounds = true
+        
+        cell.eventImage.kf.setImage(with: URL(string: event.strThumb))
         
         return cell
     }

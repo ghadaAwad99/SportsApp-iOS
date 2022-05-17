@@ -13,6 +13,7 @@ class EventsViewController : UIViewController {
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var teamesCollectionView: UICollectionView!
     
+    @IBOutlet weak var myLable: UILabel!
     
     // UpComing eventes
     var eventsResponse : [Event] = []
@@ -25,7 +26,7 @@ class EventsViewController : UIViewController {
     override func viewDidLoad() {
          super.viewDidLoad()
 
-        
+        myLable.text = "hdhfdhbdhfbhdhkfhgbhsfhgbfkfhkghfusighdfbvhfkdhsiuhrhuruhhbrwhbgkbrbabflhug;hfagfghbrhuajeirgbbaflbjkgihuhgorahguhgbhbsfvgsblgnriohgrebhgrbhklkkkgkgjkgjgjgjgjgjgjggjjgjggjgjgj"
         // Collection view
         myCollectionView.dataSource = self
         myCollectionView.delegate = self

@@ -17,6 +17,12 @@ struct Teams : Decodable  {
     let strGender : String
     let strCountry : String
     let strTeamBadge : String
+    let strWebsite : String
+    let strFacebook : String
+    let strTwitter : String
+    let strInstagram : String
+    let strTeamJersey : String
+    let strTeamFanart4 : String
 }
 
 

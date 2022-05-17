@@ -171,6 +171,22 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
         return cell1
     }
     
+    
+        
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+   
+            if(collectionView == teamesCollectionView){
+                
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let detailsVC = main.instantiateViewController(withIdentifier: "teamsDetailsVC") as! TeamsDetailsViewController
+                   
+            detailsVC.modalPresentationStyle = .fullScreen
+            detailsVC.team = teamsResponse[indexPath.row]
+            self.present(detailsVC, animated: true, completion: nil)
+            
+           }
+    }
+    
 }
 
 // protocols and confirmation

@@ -47,7 +47,7 @@ class SportsNetworkService  : AllSportsService {
     }
     
         func getLatestResultsByLeagueId(completionHandler: @escaping (AllResults?) -> ()) {
-             AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?id=4617" , method: .get, /*parameters: param,*/ encoding: URLEncoding.queryString)
+             AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?id=4328" , method: .get, /*parameters: param,*/ encoding: URLEncoding.queryString)
                        .validate()
                        .responseDecodable(of: AllResults.self) { (response) in
                            guard let sportsResponse = response.value else {

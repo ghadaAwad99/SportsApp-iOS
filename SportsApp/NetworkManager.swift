@@ -14,9 +14,12 @@ protocol AllSportsService{
     
     func fetchAllSports(completionHandler: @escaping(Sports?) -> ())
     func getEventsByLeagueId(/*leagueId: String , round: String, year: String , */completionHandler: @escaping(AllEvents?) -> ())
+    func getLatestResultsByLeagueId(completionHandler: @escaping(AllResults?) -> ())
 }
 
 class SportsNetworkService  : AllSportsService {
+    
+    
     func fetchAllSports(completionHandler: @escaping(Sports?) -> ()) {
         print("inside fetch all sports network")
         AF.request("https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
@@ -42,6 +45,18 @@ class SportsNetworkService  : AllSportsService {
            //     print("SportsNetworkService " + sportsResponse.events[0].strEvent)
         }
     }
+    
+        func getLatestResultsByLeagueId(completionHandler: @escaping (AllResults?) -> ()) {
+             AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?id=4617" , method: .get, /*parameters: param,*/ encoding: URLEncoding.queryString)
+                       .validate()
+                       .responseDecodable(of: AllResults.self) { (response) in
+                           guard let sportsResponse = response.value else {
+                               print("else")
+                               return }
+                           completionHandler(sportsResponse)
+        }
+    }
+    
 }
 
 

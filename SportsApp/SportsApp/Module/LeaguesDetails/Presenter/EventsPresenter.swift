@@ -10,7 +10,10 @@ import Foundation
 class EventsPresenter {
     
     var view : EventsViewController!
-    var result : [Event]!
+    
+    var result : [Event]?
+    
+    var latestResult : [LatestResult]?
     
     func attachView(view: EventsViewController){
         self.view = view
@@ -32,5 +35,20 @@ class EventsPresenter {
         })
         
       
+    }
+    
+
+    
+    func getLatestResultsByLeagueId(){
+        network.getLatestResultsByLeagueId(completionHandler: {
+            [weak self] (response) in
+            guard let response = response else {return print("else")}
+            self?.latestResult = response.events
+            print("response presener " + response.events[0].idEvent)
+            
+            DispatchQueue.main.async {
+                self?.view.renderCollectionView()
+            }
+        })
     }
 }

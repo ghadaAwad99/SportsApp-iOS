@@ -70,6 +70,11 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         
         // cell style
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+       /* cell.cellView.layer.shadowOffset = .zero
+        cell.cellView.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.cellView.layer.opacity = 1
+        cell.cellView.layer.shadowRadius = 10
+        cell.cellView.backgroundColor = UIColor.lightGray*/
         cell.cellImage.layer.cornerRadius = cell.cellImage.frame.height / 2
         cell.cellImage.layer.cornerRadius = cell.cellImage.frame.width / 2
         cell.imageView?.clipsToBounds = true
@@ -81,7 +86,9 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let main = UIStoryboard(name: "Main", bundle: nil)
-        let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails")
+        let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails") as! EventsViewController
+        
+        detailsVC.league = items[indexPath.row]
         
         detailsVC.modalPresentationStyle = .fullScreen
         

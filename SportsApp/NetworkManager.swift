@@ -12,15 +12,17 @@ import Alamofire
 // Network for AllSports (featching data from api)
 protocol AllSportsService{
     
-    func fetchAllSports(completionHandler: @escaping(Sports?) -> ())
-    func getEventsByLeagueId(/*leagueId: String , round: String, year: String , */completionHandler: @escaping(AllEvents?) -> ())
-    func getLatestResultsByLeagueId(completionHandler: @escaping(AllResults?) -> ())
+    static func fetchAllSports(completionHandler: @escaping(Sports?) -> ())
+    static func getEventsByLeagueId(leagueId: String , completionHandler: @escaping(AllEvents?) -> ())
+    static func getLatestResultsByLeagueId(leagueId: String , completionHandler: @escaping(AllResults?) -> ())
+    static func fetchLeagues(strSport : String, completionHandler: @escaping(AllLeagues?) -> ())
+    static func fetchTeams(strLeagues : String, completionHandler: @escaping(AllTeams?) -> ())
 }
 
 class SportsNetworkService  : AllSportsService {
     
     
-    func fetchAllSports(completionHandler: @escaping(Sports?) -> ()) {
+    static func fetchAllSports(completionHandler: @escaping(Sports?) -> ()) {
         print("inside fetch all sports network")
         AF.request("https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
             .validate()
@@ -32,81 +34,67 @@ class SportsNetworkService  : AllSportsService {
     }
     // https://www.thesportsdb.com/api/v1/json/2/eventsround.php?r=38&s=2021-2022&id=4328
     
-    func getEventsByLeagueId(/*leagueId: String = "4617", round: String = "38", year: String = "2021-2022",*/ completionHandler: @escaping(AllEvents?) -> ()) {
-       // let param : Parameters = ["id" : leagueId, "r" : round, "s": year]
-        AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsround.php?r=38&s=2021-2022&id=4328" , method: .get, /*parameters: param,*/ encoding: URLEncoding.queryString)
+    static func getEventsByLeagueId(leagueId: String, completionHandler: @escaping(AllEvents?) -> ()) {
+        let param : Parameters = ["id" : leagueId]
+        AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?" , method: .get, parameters: param, encoding: URLEncoding.queryString)
             .validate()
             .responseDecodable(of: AllEvents.self) { (response) in
                 guard let sportsResponse = response.value else {
                     print("else")
                     return }
                 completionHandler(sportsResponse)
-            //    print("SportsNetworkService " + sportsResponse.events[0].idLeague)
-           //     print("SportsNetworkService " + sportsResponse.events[0].strEvent)
         }
     }
     
-        func getLatestResultsByLeagueId(completionHandler: @escaping (AllResults?) -> ()) {
-             AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?id=4328" , method: .get, /*parameters: param,*/ encoding: URLEncoding.queryString)
-                       .validate()
-                       .responseDecodable(of: AllResults.self) { (response) in
-                           guard let sportsResponse = response.value else {
-                               print("else")
-                               return }
-                           completionHandler(sportsResponse)
+    static func getLatestResultsByLeagueId(leagueId: String,completionHandler: @escaping (AllResults?) -> ()) {
+        let param : Parameters = ["id" : leagueId]
+        AF.request("https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?" , method: .get, parameters: param, encoding: URLEncoding.queryString)
+            .validate()
+            .responseDecodable(of: AllResults.self) { (response) in
+                guard let sportsResponse = response.value else {
+                    print("else")
+                    return }
+                completionHandler(sportsResponse)
         }
     }
     
-}
-
-
-// Network for Leagues (featching data from api)
-protocol LueguesService{
-    func fetchLeagues(strSport : String, completionHandler: @escaping(AllLeagues?) -> ())
-}
-
-class LeaguesNetworkService  : LueguesService {
-    func fetchLeagues( strSport:String ,completionHandler: @escaping(AllLeagues?) -> Void) {
+    // Network for Leagues (featching data from api)
+    
+    static func fetchLeagues( strSport:String ,completionHandler: @escaping(AllLeagues?) -> Void) {
         
-         let baseUrl : String = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?"
+        let baseUrl : String = "https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?"
         
-            let param : Parameters = ["s" : strSport]
-            AF.request(baseUrl , method: .get, parameters: param, encoding: URLEncoding.queryString )
+        let param : Parameters = ["s" : strSport]
+        AF.request(baseUrl , method: .get, parameters: param, encoding: URLEncoding.queryString )
             .validate()
             .responseDecodable(of: AllLeagues.self) { (response) in
-                 
-                   guard let leaguesResnse = response.value else { return }
-                   completionHandler(leaguesResnse)
-                   print(leaguesResnse.countries[0].idLeague)
-                  
-
-               }
-      
+                
+                guard let leaguesResnse = response.value else { return }
+                completionHandler(leaguesResnse)
+                print(leaguesResnse.countries[0].idLeague)
+        }
     }
-}
-
-// Ntwork for Teames (featching data from api)
-protocol TeamsService{
-    func fetchTeams(strLeagues : String, completionHandler: @escaping(AllTeams?) -> ())
-}
-
-class TeamsNetworkService  : TeamsService {
-    func fetchTeams(strLeagues : String ,completionHandler: @escaping(AllTeams?) -> Void) {
+    
+    // Ntwork for Teames (featching data from api)
+    static func fetchTeams(strLeagues : String ,completionHandler: @escaping(AllTeams?) -> Void) {
         
-         let baseUrl : String = "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?"
+        let baseUrl : String = "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?"
         
-            let param : Parameters = ["l" : strLeagues ]
-            AF.request(baseUrl , method: .get, parameters : param, encoding: URLEncoding.queryString )
+        let param : Parameters = ["l" : strLeagues ]
+        AF.request(baseUrl , method: .get, parameters : param, encoding: URLEncoding.queryString )
             .validate()
             .responseDecodable(of: AllTeams.self) { (response) in
-                 
-                   guard let TeamsResnse = response.value else { return }
-                   completionHandler(TeamsResnse)
-                   print(TeamsResnse.teams[0].idTeam)
-                  
-
-               }
-      
+                
+                guard let TeamsResnse = response.value else { return }
+                completionHandler(TeamsResnse)
+                print(TeamsResnse.teams[0].idTeam)
+                
+        }
     }
+    
 }
+
+
+
+
 

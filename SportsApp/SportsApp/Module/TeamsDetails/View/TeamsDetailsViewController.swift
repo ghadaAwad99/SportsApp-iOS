@@ -10,7 +10,7 @@ import UIKit
 
 class TeamsDetailsViewController: UIViewController {
 
-    var team : Team!
+    var team : Teams!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var teamBadgeImage: UIImageView!
@@ -18,16 +18,13 @@ class TeamsDetailsViewController: UIViewController {
     @IBOutlet weak var tShirtImage: UIImageView!
     
     
-    var facebook =   "https://\(team.strFacebook)"
-    var facebookURL = URL(string: facebook)!
-    var twitter = "https://\(team.strTwitter)"
-    var twitterURL = URL(string: twitter)!
-    var website = "https://\(team.strWebsite)"
-    var websiteURL = URL(string: website)!
-    var instgram = "https://\(team.strInstagram)"
-    var instgramURL = URL(string: instgram)!
-    
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func facebookButton(_ sender: Any) {
+        
+        let facebook =   "https://\(self.team.strFacebook)"
+        let facebookURL = URL(string: facebook)!
         
         if UIApplication.shared.canOpenURL(facebookURL) {
                   UIApplication.shared.open(facebookURL)
@@ -38,8 +35,11 @@ class TeamsDetailsViewController: UIViewController {
         
     }
     
-    
+   
     @IBAction func instgramButton(_ sender: Any) {
+        
+        let instgram = "https://\(team.strInstagram)"
+        let instgramURL = URL(string: instgram)!
         
         if UIApplication.shared.canOpenURL(instgramURL) {
             UIApplication.shared.open(instgramURL)
@@ -52,6 +52,9 @@ class TeamsDetailsViewController: UIViewController {
     
     @IBAction func twitterButton(_ sender: Any) {
         
+        let twitter = "https://\(team.strTwitter)"
+        let twitterURL = URL(string: twitter)!
+        
         if UIApplication.shared.canOpenURL(twitterURL) {
             UIApplication.shared.open(twitterURL)
         } else {
@@ -62,6 +65,9 @@ class TeamsDetailsViewController: UIViewController {
     
     @IBAction func googleButton(_ sender: Any) {
         
+        let website = "https://\(team.strWebsite)"
+        let websiteURL = URL(string: website)!
+        
         if UIApplication.shared.canOpenURL(websiteURL) {
             UIApplication.shared.open(websiteURL)
         } else {
@@ -69,11 +75,12 @@ class TeamsDetailsViewController: UIViewController {
             UIApplication.shared.open(URL(string: "https://www.google.com/")!)
         }
     }
-    
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         backgroundImage.kf.setImage(with: URL(string : (team.strTeamFanart4)), placeholder: nil, options: nil, progressBlock: nil)
         teamBadgeImage.kf.setImage(with: URL(string : (team.strTeamBadge)), placeholder: nil, options: nil, progressBlock: nil)

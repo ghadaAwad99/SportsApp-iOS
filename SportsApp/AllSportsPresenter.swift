@@ -16,11 +16,11 @@ class AllSportsPresenter : AllSportsPresenterProtocol {
         self.allSportsView = view
     }
     
-    let network = SportsNetworkService()
+    //let network = SportsNetworkService()
     
     func getAllSports() {
         print("inside getAllSports presenter")
-        network.fetchAllSports {
+        SportsNetworkService.fetchAllSports {
             [weak self] (response) in
             guard let response = response else {return}
             print ("AllSportsPresenter " + (response.sports[0].strSport ))

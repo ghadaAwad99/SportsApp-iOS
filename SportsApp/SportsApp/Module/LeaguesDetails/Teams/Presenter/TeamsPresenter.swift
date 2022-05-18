@@ -17,11 +17,11 @@ class TeamsPresenter : TeamsPresenterProtocol {
         self.TeamsView = view
     }
     
-    let networkService = TeamsNetworkService()
+    //let networkService = TeamsNetworkService()
     
     func getTeams(strLeagues : String) {
         
-        networkService.fetchTeams(strLeagues: strLeagues , completionHandler: {
+        SportsNetworkService.fetchTeams(strLeagues: strLeagues , completionHandler: {
             [weak self] (response) in
             guard let response = response else {return}
             self?.result = response.teams

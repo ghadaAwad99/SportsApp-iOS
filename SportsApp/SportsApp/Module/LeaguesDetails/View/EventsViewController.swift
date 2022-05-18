@@ -15,6 +15,8 @@ class EventsViewController : UIViewController {
     
     @IBOutlet weak var myLable: UILabel!
     
+    var league :Leagues!
+    
     // UpComing eventes
     var eventsResponse : [Event] = []
     var presenter : EventsPresenter!
@@ -28,6 +30,14 @@ class EventsViewController : UIViewController {
     var teamsResponse: [Teams] = []
     var teamsPresenter : TeamsPresenter!
     
+    @IBAction func addToFavoriteButton(_ sender: UIButton) {
+    }
+    
+   
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +49,9 @@ class EventsViewController : UIViewController {
         
         // getting Upcoming eventes data
         presenter = EventsPresenter()
-        presenter.getEventsByLeagueId(leagueId: "4617")
-        presenter.getLatestResultsByLeagueId()
+        presenter.getEventsByLeagueId(leagueId: league.idLeague)
+        print("id league\(league.idLeague)")
+        presenter.getLatestResultsByLeagueId(leagueId: league.idLeague)
         presenter.attachView(view: self)
         
         // getting teams data
@@ -146,7 +157,8 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
             resultCell.homeTeamScore.font = UIFont.boldSystemFont(ofSize: resultCell.homeTeamScore.font.pointSize)
          resultCell.awayTeamScore.font = UIFont.boldSystemFont(ofSize: resultCell.homeTeamScore.font.pointSize)
          
-            //   resultCell.awayTeamScore.text = "5"
+            resultCell.awayTeamScore.text = result.intAwayScore
+            resultCell.homeTeamScore.text = result.intHomeScore
             
             resultCell.resultImage.kf.setImage(with: URL(string: result.strThumb ))
             
@@ -165,8 +177,6 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
             
             return teamsCell
         }
-        
-        print("------------------------this is brfore return---------------")
         
         return cell1
     }

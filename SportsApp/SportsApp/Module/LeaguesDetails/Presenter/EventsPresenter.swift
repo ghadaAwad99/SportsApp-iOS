@@ -19,11 +19,11 @@ class EventsPresenter {
         self.view = view
     }
     
-    let network = SportsNetworkService()
+   // let network = SportsNetworkService()
     
     func getEventsByLeagueId(leagueId : String){
         print("inside events presenter")
-        network.getEventsByLeagueId(/*leagueId: leagueId,*/ completionHandler: {
+        SportsNetworkService.getEventsByLeagueId(leagueId: leagueId, completionHandler: {
             [weak self] (response) in
             guard let response = response else {return print("else")}
             self?.result = response.events
@@ -37,10 +37,8 @@ class EventsPresenter {
       
     }
     
-
-    
-    func getLatestResultsByLeagueId(){
-        network.getLatestResultsByLeagueId(completionHandler: {
+    func getLatestResultsByLeagueId(leagueId: String){
+        SportsNetworkService.getLatestResultsByLeagueId(leagueId: leagueId, completionHandler: {
             [weak self] (response) in
             guard let response = response else {return print("else")}
             self?.latestResult = response.events

@@ -25,11 +25,11 @@ class LeaguesPresenter : LeaguesPresenterProtocol {
         self.LeaguesView = view
     }
     
-    let networkService = LeaguesNetworkService()
+    //let networkService = LeaguesNetworkService()
     
     func getLeagues(strSport:String) {
         
-        networkService.fetchLeagues (strSport: strSport , completionHandler: {
+        SportsNetworkService.fetchLeagues (strSport: strSport , completionHandler: {
             [weak self] (response) in
             guard let response = response else {return}
             self?.result = response.countries

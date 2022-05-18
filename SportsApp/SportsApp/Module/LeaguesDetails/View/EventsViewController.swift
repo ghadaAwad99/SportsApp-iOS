@@ -15,6 +15,8 @@ class EventsViewController : UIViewController {
     
     @IBOutlet weak var myLable: UILabel!
     
+    var appDelegate : AppDelegate!
+    
     var league :Leagues!
     
     // UpComing eventes
@@ -31,6 +33,8 @@ class EventsViewController : UIViewController {
     var teamsPresenter : TeamsPresenter!
     
     @IBAction func addToFavoriteButton(_ sender: UIButton) {
+        presenter.saveLeagues(league: league , appDelegate: appDelegate )
+        
     }
     
    
@@ -40,6 +44,10 @@ class EventsViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // core data
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
         
         // myLable.text = "hdhfdhbdhfbhdhkfhgbhsfhgbfkfhkghfusighdfbvhfkdhsiuhrhuruhhbrwhbgkbrbabflhug;hfagfghbrhuajeirgbbaflbjkgihuhgorahguhgbhbsfvgsblgnriohgrebhgrbhklkkkgkgjkgjgjgjgjgjgjggjjgjggjgjgj"
         // Collection view

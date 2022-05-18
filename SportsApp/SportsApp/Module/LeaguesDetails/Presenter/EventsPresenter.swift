@@ -7,7 +7,16 @@
 //
 
 import Foundation
-class EventsPresenter {
+
+
+protocol EventepresenterProtocol {
+    func attachView(view: EventsViewController)
+    func getEventsByLeagueId(leagueId : String)
+    func getLatestResultsByLeagueId(leagueId: String)
+    func saveLeagues (league : Leagues , appDelegate: AppDelegate )
+}
+
+class EventsPresenter : EventepresenterProtocol {
     
     var view : EventsViewController!
     
@@ -15,11 +24,14 @@ class EventsPresenter {
     
     var latestResult : [LatestResult]?
     
+    let networkService = LeaguesCoreDataService()
+    // let network = SportsNetworkService()
+    
     func attachView(view: EventsViewController){
         self.view = view
     }
     
-   // let network = SportsNetworkService()
+   
     
     func getEventsByLeagueId(leagueId : String){
         print("inside events presenter")
@@ -53,4 +65,9 @@ class EventsPresenter {
             }
         })
     }
+    
+    func saveLeagues (league : Leagues , appDelegate: AppDelegate ) {
+        networkService.saveLeagueToCoreData(leagues: league, appDelegate: appDelegate )
+    }
+    
 }

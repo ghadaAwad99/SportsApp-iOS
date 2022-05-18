@@ -51,6 +51,7 @@ class CustomTableViewController: UIViewController {
     */
 
 }
+
 extension CustomTableViewController : UITableViewDataSource , UITableViewDelegate , LeaguesViewProtocol {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

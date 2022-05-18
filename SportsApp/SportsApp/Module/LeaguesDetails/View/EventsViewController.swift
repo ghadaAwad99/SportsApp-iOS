@@ -112,7 +112,7 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
             return latestResultResponse.count
         }
         
-        print("array count : \(self.eventsResponse.count)")
+        print("upcoming array count : \(self.eventsResponse.count)")
         
         //arrayCount =  self.eventsResponse.count
         
@@ -128,6 +128,7 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
         if (collectionView == myCollectionView){
             
             let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventsCustomCell
+            
             
             let event = eventsResponse[indexPath.row]
             
@@ -155,7 +156,7 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
            // resultCell.resultImage.layer.masksToBounds = true
             
             resultCell.homeTeamScore.font = UIFont.boldSystemFont(ofSize: resultCell.homeTeamScore.font.pointSize)
-         resultCell.awayTeamScore.font = UIFont.boldSystemFont(ofSize: resultCell.homeTeamScore.font.pointSize)
+            resultCell.awayTeamScore.font = UIFont.boldSystemFont(ofSize: resultCell.homeTeamScore.font.pointSize)
          
             resultCell.awayTeamScore.text = result.intAwayScore
             resultCell.homeTeamScore.text = result.intHomeScore
@@ -203,7 +204,7 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
 extension EventsViewController : EventsViewProtocol  , TeamsViewProtocol {
     
     func renderCollectionView() {
-        self.eventsResponse = presenter.result ?? []
+        self.eventsResponse = presenter.upcomingEvent ?? []
         self.latestResultResponse = presenter.latestResult ?? []
         myCollectionView.reloadData()
         latestCollectionView.reloadData()

@@ -65,9 +65,11 @@ extension AllSportsViewController :AllSportsViewProtocol, UICollectionViewDelega
         
         cell.myImage.kf.setImage(with: URL(string: sportsResponse[indexPath.row].strSportThumb))
         cell.nameLable.text = sportsResponse[indexPath.row].strSport
-        cell.myView.layer.cornerRadius = 20
-        cell.myView.backgroundColor = UIColor.lightGray
-        
+        cell.myView.layer.cornerRadius = 10
+               cell.myView.backgroundColor = UIColor.white
+               cell.myImage.contentMode = .scaleAspectFill
+               cell.myImage.layer.cornerRadius = 20
+               cell.myImage.layer.masksToBounds = true
         return cell
     }
     

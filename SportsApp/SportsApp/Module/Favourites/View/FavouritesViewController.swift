@@ -20,6 +20,12 @@ class FavouritesViewController: UIViewController {
     var appDelegate: AppDelegate!
     
     @IBOutlet weak var tableView: UITableView!
+ 
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,11 +71,13 @@ extension FavouritesViewController : UITableViewDataSource , UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("array leagus count: \(leaguesList.count)")
+        print("array fav leagus count: \(leaguesList.count)")
         return leaguesList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favouritesCell") as! FavouritesTableViewCell
+        
+        cell.selectionStyle = .default
         
         
         let item = leaguesList[indexPath.row]
@@ -99,26 +107,25 @@ extension FavouritesViewController : UITableViewDataSource , UITableViewDelegate
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 print("You are Online!")
-                let main = UIStoryboard(name: "Main", bundle: nil)
-                let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails") as! EventsViewController
+                DispatchQueue.main.async {
+                    let main = UIStoryboard(name: "Main", bundle: nil)
+                    let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails") as! EventsViewController
+                    
+                    detailsVC.leagueId = (self.leaguesList[indexPath.row].value(forKey: "idLeague") as? String)!
+                    
+                    detailsVC.modalPresentationStyle = .fullScreen
+                    
+                    self.present(detailsVC, animated: true, completion: nil)
+                }
                 
-                detailsVC.league.idLeague = (self.leaguesList[indexPath.row].value(forKey: "idLeague") as? String)!
-                
-                detailsVC.modalPresentationStyle = .fullScreen
-                
-                self.present(detailsVC, animated: true, completion: nil)
             } else{
                 print("You Are Offline.")
-                //show alert
+                self.showAlert(title: "No Connection!", message: "You are offline some functionalities may not be available.Please Check your connection and try again.")
             }
         }
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)
-        
-        
-        
-        
-        
+  
     }
     
     
@@ -128,6 +135,15 @@ extension FavouritesViewController : UITableViewDataSource , UITableViewDelegate
             leaguesList.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func showAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

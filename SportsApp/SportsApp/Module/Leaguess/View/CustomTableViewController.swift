@@ -89,6 +89,7 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         let main = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails") as! EventsViewController
         
+        detailsVC.leagueId = items[indexPath.row].idLeague
         detailsVC.league = items[indexPath.row]
         
         detailsVC.modalPresentationStyle = .fullScreen

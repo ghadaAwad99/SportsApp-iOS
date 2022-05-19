@@ -19,6 +19,8 @@ class EventsViewController : UIViewController {
     
     var league :Leagues!
     
+    var leagueId: String!
+    
     var coreDataLeagueId : String!
     
     
@@ -60,9 +62,9 @@ class EventsViewController : UIViewController {
         
         // getting Upcoming eventes data
         presenter = EventsPresenter()
-        presenter.getEventsByLeagueId(leagueId: league.idLeague)
-        print("id league\(league.idLeague)")
-        presenter.getLatestResultsByLeagueId(leagueId: league.idLeague)
+        presenter.getEventsByLeagueId(leagueId: leagueId)
+        print("id league\(leagueId)")
+        presenter.getLatestResultsByLeagueId(leagueId: leagueId)
         presenter.attachView(view: self)
         
         // getting teams data

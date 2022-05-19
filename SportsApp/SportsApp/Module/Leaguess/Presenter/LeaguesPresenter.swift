@@ -17,6 +17,8 @@ protocol LeaguesPresenterProtocol {
 
 
 class LeaguesPresenter : LeaguesPresenterProtocol {
+    
+  
   
     var result : [Leagues]!
     weak var LeaguesView: LeaguesViewProtocol!

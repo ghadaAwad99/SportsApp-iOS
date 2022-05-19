@@ -9,10 +9,10 @@
 import Foundation
 struct Leagues: Decodable {
 
-    let idLeague: String
-     let strSport: String
-    let strLeague: String
-    let strYoutube: String
-    let strBadge: String
+    var idLeague: String
+     var strSport: String
+    var strLeague: String
+    var strYoutube: String
+    var strBadge: String
 
 }

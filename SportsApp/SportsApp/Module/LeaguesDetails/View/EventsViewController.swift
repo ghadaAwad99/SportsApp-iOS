@@ -19,6 +19,9 @@ class EventsViewController : UIViewController {
     
     var league :Leagues!
     
+    var coreDataLeagueId : String!
+    
+    
     // UpComing eventes
     var eventsResponse : [Event] = []
     var presenter : EventsPresenter!

@@ -37,5 +37,31 @@ func saveLeagueToCoreData(leagues : Leagues , appDelegate : AppDelegate ){
     }
     
 }
+    
+    static func fetchLeaguesFromCoreData(appDelegate : AppDelegate) -> [NSManagedObject] {
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        // let entity = NSEntityDescription.entity(forEntityName: "LeaguesData", in: viewContext)
+        var leaguesList : [NSManagedObject] = []
+        let fetch = NSFetchRequest<NSManagedObject>(entityName: "LeaguesData")
+        
+        do{
+            leaguesList = try viewContext.fetch(fetch)
+        }catch{
+            print("Couldn't fetch!")
+        }
+        return leaguesList
+    }
+    
+    static func deleteLeagueFromCoreData(league: NSManagedObject, appDelegate: AppDelegate){
+         let viewContext = appDelegate.persistentContainer.viewContext
+        viewContext.delete(league)
+        do{
+            try viewContext.save()
+            print("league deleted")
+        }catch{
+            print("Couldn't delete movie!")
+        }
+    }
 
 }

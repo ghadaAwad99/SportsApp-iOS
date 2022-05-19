@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 
 protocol EventepresenterProtocol {
@@ -20,6 +21,10 @@ class EventsPresenter : EventepresenterProtocol {
     
     var view : EventsViewController!
     
+    var FavoriteView : FavouritesViewController!
+    
+    var leaguesList : [NSManagedObject]!
+    
     var upcomingEvent : [Event]?
     
     var latestResult : [LatestResult]?
@@ -31,7 +36,11 @@ class EventsPresenter : EventepresenterProtocol {
         self.view = view
     }
     
-   
+    func attachFavoriteView(FavoriteView: FavouritesViewController){
+        self.FavoriteView = FavoriteView
+    }
+    
+    
     
     func getEventsByLeagueId(leagueId : String){
         print("inside events presenter")
@@ -50,7 +59,7 @@ class EventsPresenter : EventepresenterProtocol {
             }
         })
         
-      
+        
     }
     
     func getLatestResultsByLeagueId(leagueId: String){
@@ -68,6 +77,19 @@ class EventsPresenter : EventepresenterProtocol {
     
     func saveLeagues (league : Leagues , appDelegate: AppDelegate ) {
         networkService.saveLeagueToCoreData(leagues: league, appDelegate: appDelegate )
+    }
+    
+    func getLeaguesFromCoreData(appDelegate : AppDelegate){
+        self.leaguesList = LeaguesCoreDataService.fetchLeaguesFromCoreData(appDelegate: appDelegate)
+        
+        DispatchQueue.main.async {
+            self.FavoriteView.renderTableView()
+        }
+        
+    }
+    
+    func deleteLeagueFromCoreData(league: NSManagedObject, appDelegate: AppDelegate){
+        LeaguesCoreDataService.deleteLeagueFromCoreData(league: league, appDelegate: appDelegate)
     }
     
 }

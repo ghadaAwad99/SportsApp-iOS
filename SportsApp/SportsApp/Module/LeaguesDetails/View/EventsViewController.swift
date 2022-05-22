@@ -70,7 +70,7 @@ class EventsViewController : UIViewController {
         // getting teams data
         teamsPresenter = TeamsPresenter()
         teamsPresenter.attachView(view: self)
-        teamsPresenter.getTeams(strLeagues : "English Premier League")
+        teamsPresenter.getTeams(strLeagues : league.strLeague)
         
     }
     
@@ -152,7 +152,7 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
             cell.eventImage.layer.cornerRadius = 15
             cell.eventImage.layer.masksToBounds = true
             
-            cell.eventImage.kf.setImage(with: URL(string: event.strThumb))
+            cell.eventImage.kf.setImage(with: URL(string: event.strThumb ?? ""))
             
             return cell
         }
@@ -174,7 +174,7 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
             resultCell.awayTeamScore.text = result.intAwayScore
             resultCell.homeTeamScore.text = result.intHomeScore
             
-            resultCell.resultImage.kf.setImage(with: URL(string: result.strThumb ))
+            resultCell.resultImage.kf.setImage(with: URL(string: result.strThumb ?? "" ))
             
             return resultCell
             
@@ -186,8 +186,9 @@ extension EventsViewController : UICollectionViewDelegate, UICollectionViewDataS
             
             let item = teamsResponse[indexPath.row]
             //  cell.teameName.text = item.strTeam
-            let imageUrl = item.strTeamBadge
-            teamsCell.teamBadgeImage.kf.setImage(with: URL(string : imageUrl), placeholder: nil, options: nil, progressBlock: nil)
+            let imageUrl = item.strTeamBadge ?? ""
+            teamsCell.teamBadgeImage.kf.setImage(with
+                : URL(string : imageUrl), placeholder: nil, options: nil, progressBlock: nil)
             
             return teamsCell
         }

@@ -25,7 +25,7 @@ class EventsPresenter : EventepresenterProtocol {
     
     var leaguesList : [NSManagedObject]!
     
-    var upcomingEvent : [Event]?
+    var upcomingEvent : [Event]!
     
     var latestResult : [LatestResult]?
     
@@ -48,11 +48,11 @@ class EventsPresenter : EventepresenterProtocol {
             [weak self] (response) in
             guard let response = response else {return print("else")}
             let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: "en_US_POSIX")
+            /*formatter.locale = Locale(identifier: "en_US_POSIX")
             formatter.dateFormat = "yyyy-MM-dd"
-            let filterdResponse = response.events.filter { formatter.date(from:$0.dateEvent) ?? Date()  > Date()}
-            self?.upcomingEvent = filterdResponse
-            print("response presener " + response.events[0].idEvent)
+            let filterdResponse = response.events.filter { formatter.date(from:($0.dateEvent)!) ?? Date()  > Date()}*/
+            self?.upcomingEvent = response.events
+            print("response presener " + (response.events[0].idEvent)!)
             
             DispatchQueue.main.async {
                 self?.view.renderCollectionView()
@@ -67,7 +67,7 @@ class EventsPresenter : EventepresenterProtocol {
             [weak self] (response) in
             guard let response = response else {return print("else")}
             self?.latestResult = response.events
-            print("response presener " + response.events[0].idEvent)
+            print("response presener " + response.events[0].idEvent!)
             
             DispatchQueue.main.async {
                 self?.view.renderCollectionView()

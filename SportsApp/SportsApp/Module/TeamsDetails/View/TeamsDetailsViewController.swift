@@ -82,9 +82,9 @@ class TeamsDetailsViewController: UIViewController {
         super.viewDidLoad()
         
 
-        backgroundImage.kf.setImage(with: URL(string : (team.strTeamFanart4)), placeholder: nil, options: nil, progressBlock: nil)
-        teamBadgeImage.kf.setImage(with: URL(string : (team.strTeamBadge)), placeholder: nil, options: nil, progressBlock: nil)
-        tShirtImage.kf.setImage(with: URL(string : (team.strTeamJersey)), placeholder: nil, options: nil, progressBlock: nil)
+        backgroundImage.kf.setImage(with: URL(string : (team.strTeamFanart4 ?? "")), placeholder: nil, options: nil, progressBlock: nil)
+        teamBadgeImage.kf.setImage(with: URL(string : (team.strTeamBadge ?? "")), placeholder: nil, options: nil, progressBlock: nil)
+        tShirtImage.kf.setImage(with: URL(string : (team.strTeamJersey ?? "")), placeholder: nil, options: nil, progressBlock: nil)
         
         teamName.text = team.strTeam
         

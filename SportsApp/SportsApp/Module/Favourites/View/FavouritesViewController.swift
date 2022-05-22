@@ -20,11 +20,8 @@ class FavouritesViewController: UIViewController {
     var appDelegate: AppDelegate!
     
     @IBOutlet weak var tableView: UITableView!
- 
     
-    @IBAction func backButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,7 +122,7 @@ extension FavouritesViewController : UITableViewDataSource , UITableViewDelegate
         }
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)
-  
+        
     }
     
     

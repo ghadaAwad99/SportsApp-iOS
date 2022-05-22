@@ -40,7 +40,7 @@ class SportsNetworkService  : AllSportsService {
             .validate()
             .responseDecodable(of: AllEvents.self) { (response) in
                 guard let sportsResponse = response.value else {
-                    print("else")
+                    print("upcoming events else")
                     return }
                 completionHandler(sportsResponse)
         }
@@ -52,7 +52,7 @@ class SportsNetworkService  : AllSportsService {
             .validate()
             .responseDecodable(of: AllResults.self) { (response) in
                 guard let sportsResponse = response.value else {
-                    print("else")
+                    print("getLatestResultsByLeagueId else")
                     return }
                 completionHandler(sportsResponse)
         }

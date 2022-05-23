@@ -108,7 +108,9 @@ extension FavouritesViewController : UITableViewDataSource , UITableViewDelegate
                     let main = UIStoryboard(name: "Main", bundle: nil)
                     let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails") as! EventsViewController
                     
-                    detailsVC.leagueId = (self.leaguesList[indexPath.row].value(forKey: "idLeague") as? String)!
+                    detailsVC.leagueId = self.leaguesList[indexPath.row].value(forKey: "idLeague") as? String
+                    
+                     detailsVC.strLeague = self.leaguesList[indexPath.row].value(forKey: "strLeague") as? String
                     
                     detailsVC.modalPresentationStyle = .fullScreen
                     

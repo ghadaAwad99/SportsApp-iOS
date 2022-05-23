@@ -81,6 +81,11 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         cell.imageView?.clipsToBounds = true
         
       
+        //cell.cellYoutubeButton.addTarget(self, action: #selector(openYoutube(_:)), for: .touchUpInside)
+        
+      
+        
+      
         return cell
         
     }
@@ -90,6 +95,7 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         let detailsVC = main.instantiateViewController(withIdentifier: "leaguesDetails") as! EventsViewController
         
         detailsVC.leagueId = items[indexPath.row].idLeague
+     detailsVC.strLeague = items[indexPath.row].strLeague
         detailsVC.league = items[indexPath.row]
         
         detailsVC.modalPresentationStyle = .fullScreen
@@ -101,4 +107,9 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
               self.items = presenter.result
         tableView.reloadData()
           }
+    
+    /*@objc func openYoutube(_ sender: Any?) {
+
+                        print("Tapped")
+                    }*/
 }

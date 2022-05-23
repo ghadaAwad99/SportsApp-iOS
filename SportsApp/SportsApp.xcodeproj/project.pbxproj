@@ -41,6 +41,9 @@
 		7FCFC40E282EC08000DED847 /* AllSportsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFC40D282EC08000DED847 /* AllSportsViewProtocol.swift */; };
 		7FD17C03282F43DE00A0513C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD17C02282F43DE00A0513C /* Kingfisher */; };
 		7FD17C09282F467900A0513C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD17C08282F467900A0513C /* Alamofire */; };
+		7FE0EF32283AF1B500069F24 /* SportsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0EF31283AF1B500069F24 /* SportsAppTests.swift */; };
+		7FE0EF40283AF97F00069F24 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0EF3F283AF97F00069F24 /* MockNetworkManager.swift */; };
+		7FE0EF4E283B027F00069F24 /* MockingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0EF4D283B027F00069F24 /* MockingNetworkManager.swift */; };
 		7FE799F528315CE20078910C /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE799F428315CE20078910C /* League.swift */; };
 		7FE799F728315CEE0078910C /* Leagues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE799F628315CEE0078910C /* Leagues.swift */; };
 		7FE799F928315D510078910C /* LeagueViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE799F828315D510078910C /* LeagueViewProtocol.swift */; };
@@ -49,6 +52,30 @@
 		7FE799FF2831AAB50078910C /* EventsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE799FE2831AAB50078910C /* EventsCollectionView.swift */; };
 		7FF1FD302831386C0099803C /* LeaguesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1FD2F2831386C0099803C /* LeaguesPresenter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FE0EF34283AF1B500069F24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FB1214C282D67FB004D8039 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FB12153282D67FB004D8039;
+			remoteInfo = SportsApp;
+		};
+		7FE0EF42283AF97F00069F24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FB1214C282D67FB004D8039 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FB12153282D67FB004D8039;
+			remoteInfo = SportsApp;
+		};
+		7FE0EF50283B027F00069F24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FB1214C282D67FB004D8039 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FB12153282D67FB004D8039;
+			remoteInfo = SportsApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		68074A2A2832DECF007C6248 /* TeamsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +112,15 @@
 		7FCFC409282EC00300DED847 /* AllSportsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSportsPresenterProtocol.swift; sourceTree = SOURCE_ROOT; };
 		7FCFC40B282EC02900DED847 /* AllSportsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSportsPresenter.swift; sourceTree = SOURCE_ROOT; };
 		7FCFC40D282EC08000DED847 /* AllSportsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSportsViewProtocol.swift; sourceTree = "<group>"; };
+		7FE0EF2F283AF1B500069F24 /* SportsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE0EF31283AF1B500069F24 /* SportsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsAppTests.swift; sourceTree = "<group>"; };
+		7FE0EF33283AF1B500069F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FE0EF3D283AF97F00069F24 /* MockNetworkManager.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockNetworkManager.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE0EF3F283AF97F00069F24 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		7FE0EF41283AF97F00069F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FE0EF4B283B027F00069F24 /* MockingNetworkManager.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockingNetworkManager.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE0EF4D283B027F00069F24 /* MockingNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockingNetworkManager.swift; sourceTree = "<group>"; };
+		7FE0EF4F283B027F00069F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE799F428315CE20078910C /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		7FE799F628315CEE0078910C /* Leagues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leagues.swift; sourceTree = "<group>"; };
 		7FE799F828315D510078910C /* LeagueViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueViewProtocol.swift; sourceTree = "<group>"; };
@@ -101,6 +137,27 @@
 			files = (
 				7FD17C03282F43DE00A0513C /* Kingfisher in Frameworks */,
 				7FD17C09282F467900A0513C /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF2C283AF1B500069F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF3A283AF97F00069F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF48283B027F00069F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				7FB12156282D67FB004D8039 /* SportsApp */,
+				7FE0EF30283AF1B500069F24 /* SportsAppTests */,
+				7FE0EF3E283AF97F00069F24 /* MockNetworkManager */,
+				7FE0EF4C283B027F00069F24 /* MockingNetworkManager */,
 				7FB12155282D67FB004D8039 /* Products */,
 				0F7EB6627E18D8CA32E7CCE0 /* Pods */,
 			);
@@ -225,6 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				7FB12154282D67FB004D8039 /* SportsApp.app */,
+				7FE0EF2F283AF1B500069F24 /* SportsAppTests.xctest */,
+				7FE0EF3D283AF97F00069F24 /* MockNetworkManager.xctest */,
+				7FE0EF4B283B027F00069F24 /* MockingNetworkManager.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -393,6 +456,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7FE0EF30283AF1B500069F24 /* SportsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FE0EF31283AF1B500069F24 /* SportsAppTests.swift */,
+				7FE0EF33283AF1B500069F24 /* Info.plist */,
+			);
+			path = SportsAppTests;
+			sourceTree = "<group>";
+		};
+		7FE0EF3E283AF97F00069F24 /* MockNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				7FE0EF3F283AF97F00069F24 /* MockNetworkManager.swift */,
+				7FE0EF41283AF97F00069F24 /* Info.plist */,
+			);
+			path = MockNetworkManager;
+			sourceTree = "<group>";
+		};
+		7FE0EF4C283B027F00069F24 /* MockingNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				7FE0EF4D283B027F00069F24 /* MockingNetworkManager.swift */,
+				7FE0EF4F283B027F00069F24 /* Info.plist */,
+			);
+			path = MockingNetworkManager;
+			sourceTree = "<group>";
+		};
 		7FE799F328315CCE0078910C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +524,60 @@
 			productReference = 7FB12154282D67FB004D8039 /* SportsApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7FE0EF2E283AF1B500069F24 /* SportsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE0EF38283AF1B500069F24 /* Build configuration list for PBXNativeTarget "SportsAppTests" */;
+			buildPhases = (
+				7FE0EF2B283AF1B500069F24 /* Sources */,
+				7FE0EF2C283AF1B500069F24 /* Frameworks */,
+				7FE0EF2D283AF1B500069F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FE0EF35283AF1B500069F24 /* PBXTargetDependency */,
+			);
+			name = SportsAppTests;
+			productName = SportsAppTests;
+			productReference = 7FE0EF2F283AF1B500069F24 /* SportsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7FE0EF3C283AF97F00069F24 /* MockNetworkManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE0EF44283AF97F00069F24 /* Build configuration list for PBXNativeTarget "MockNetworkManager" */;
+			buildPhases = (
+				7FE0EF39283AF97F00069F24 /* Sources */,
+				7FE0EF3A283AF97F00069F24 /* Frameworks */,
+				7FE0EF3B283AF97F00069F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FE0EF43283AF97F00069F24 /* PBXTargetDependency */,
+			);
+			name = MockNetworkManager;
+			productName = MockNetworkManager;
+			productReference = 7FE0EF3D283AF97F00069F24 /* MockNetworkManager.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7FE0EF4A283B027F00069F24 /* MockingNetworkManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE0EF54283B027F00069F24 /* Build configuration list for PBXNativeTarget "MockingNetworkManager" */;
+			buildPhases = (
+				7FE0EF47283B027F00069F24 /* Sources */,
+				7FE0EF48283B027F00069F24 /* Frameworks */,
+				7FE0EF49283B027F00069F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FE0EF51283B027F00069F24 /* PBXTargetDependency */,
+			);
+			name = MockingNetworkManager;
+			productName = MockingNetworkManager;
+			productReference = 7FE0EF4B283B027F00069F24 /* MockingNetworkManager.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -446,6 +590,18 @@
 				TargetAttributes = {
 					7FB12153282D67FB004D8039 = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					7FE0EF2E283AF1B500069F24 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 7FB12153282D67FB004D8039;
+					};
+					7FE0EF3C283AF97F00069F24 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 7FB12153282D67FB004D8039;
+					};
+					7FE0EF4A283B027F00069F24 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 7FB12153282D67FB004D8039;
 					};
 				};
 			};
@@ -467,6 +623,9 @@
 			projectRoot = "";
 			targets = (
 				7FB12153282D67FB004D8039 /* SportsApp */,
+				7FE0EF2E283AF1B500069F24 /* SportsAppTests */,
+				7FE0EF3C283AF97F00069F24 /* MockNetworkManager */,
+				7FE0EF4A283B027F00069F24 /* MockingNetworkManager */,
 			);
 		};
 /* End PBXProject section */
@@ -479,6 +638,27 @@
 				7FB12167282D6823004D8039 /* LaunchScreen.storyboard in Resources */,
 				7FB12164282D6823004D8039 /* Assets.xcassets in Resources */,
 				7FB1215F282D67FC004D8039 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF2D283AF1B500069F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF3B283AF97F00069F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF49283B027F00069F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +708,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FE0EF2B283AF1B500069F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE0EF32283AF1B500069F24 /* SportsAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF39283AF97F00069F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE0EF40283AF97F00069F24 /* MockNetworkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE0EF47283B027F00069F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE0EF4E283B027F00069F24 /* MockingNetworkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FE0EF35283AF1B500069F24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FB12153282D67FB004D8039 /* SportsApp */;
+			targetProxy = 7FE0EF34283AF1B500069F24 /* PBXContainerItemProxy */;
+		};
+		7FE0EF43283AF97F00069F24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FB12153282D67FB004D8039 /* SportsApp */;
+			targetProxy = 7FE0EF42283AF97F00069F24 /* PBXContainerItemProxy */;
+		};
+		7FE0EF51283B027F00069F24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FB12153282D67FB004D8039 /* SportsApp */;
+			targetProxy = 7FE0EF50283B027F00069F24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7FB1215D282D67FB004D8039 /* Main.storyboard */ = {
@@ -698,6 +920,120 @@
 			};
 			name = Release;
 		};
+		7FE0EF36283AF1B500069F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SportsAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ghada.SportsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsApp.app/SportsApp";
+			};
+			name = Debug;
+		};
+		7FE0EF37283AF1B500069F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SportsAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ghada.SportsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsApp.app/SportsApp";
+			};
+			name = Release;
+		};
+		7FE0EF45283AF97F00069F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MockNetworkManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ghada.MockNetworkManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsApp.app/SportsApp";
+			};
+			name = Debug;
+		};
+		7FE0EF46283AF97F00069F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MockNetworkManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ghada.MockNetworkManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsApp.app/SportsApp";
+			};
+			name = Release;
+		};
+		7FE0EF52283B027F00069F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MockingNetworkManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ghada.MockingNetworkManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsApp.app/SportsApp";
+			};
+			name = Debug;
+		};
+		7FE0EF53283B027F00069F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MockingNetworkManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ghada.MockingNetworkManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsApp.app/SportsApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -715,6 +1051,33 @@
 			buildConfigurations = (
 				7FB1216C282D6824004D8039 /* Debug */,
 				7FB1216D282D6824004D8039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE0EF38283AF1B500069F24 /* Build configuration list for PBXNativeTarget "SportsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE0EF36283AF1B500069F24 /* Debug */,
+				7FE0EF37283AF1B500069F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE0EF44283AF97F00069F24 /* Build configuration list for PBXNativeTarget "MockNetworkManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE0EF45283AF97F00069F24 /* Debug */,
+				7FE0EF46283AF97F00069F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE0EF54283B027F00069F24 /* Build configuration list for PBXNativeTarget "MockingNetworkManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE0EF52283B027F00069F24 /* Debug */,
+				7FE0EF53283B027F00069F24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

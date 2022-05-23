@@ -48,10 +48,10 @@ class EventsPresenter : EventepresenterProtocol {
             [weak self] (response) in
             guard let response = response else {return print("else")}
             let formatter = DateFormatter()
-            /*formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.locale = Locale(identifier: "en_US_POSIX")
             formatter.dateFormat = "yyyy-MM-dd"
-            let filterdResponse = response.events.filter { formatter.date(from:($0.dateEvent)!) ?? Date()  > Date()}*/
-            self?.upcomingEvent = response.events
+            let filterdResponse = response.events.filter { formatter.date(from:($0.dateEvent)!) ?? Date()  > Date()}
+            self?.upcomingEvent = filterdResponse
             print("response presener " + (response.events[0].idEvent)!)
             
             DispatchQueue.main.async {

@@ -21,6 +21,8 @@ class EventsViewController : UIViewController {
     
     var leagueId: String!
     
+    var strLeague : String!
+    
     var coreDataLeagueId : String!
     
     
@@ -70,7 +72,7 @@ class EventsViewController : UIViewController {
         // getting teams data
         teamsPresenter = TeamsPresenter()
         teamsPresenter.attachView(view: self)
-        teamsPresenter.getTeams(strLeagues : league.strLeague)
+        teamsPresenter.getTeams(strLeagues : strLeague)
         
     }
     

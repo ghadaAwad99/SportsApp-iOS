@@ -81,7 +81,7 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         cell.imageView?.clipsToBounds = true
         
       
-        //cell.cellYoutubeButton.addTarget(self, action: #selector(openYoutube(_:)), for: .touchUpInside)
+         cell.youTube.addTarget(self, action: #selector(openYoutube(sender:)), for: .touchUpInside)
         
       
         
@@ -108,8 +108,30 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
         tableView.reloadData()
           }
     
-    /*@objc func openYoutube(_ sender: Any?) {
-
-                        print("Tapped")
-                    }*/
+      @objc func openYoutube( sender: UIButton ) {
+               
+       print("Tapped")
+      let senderPoint = sender.bounds.origin
+      let pointInTable = sender.convert(senderPoint, to: self.tableview)
+      if let indexPath = self.tableview.indexPathForRow(at: pointInTable) {
+          print(indexPath.row)
+    
+          if(items[indexPath.row].strYoutube != ""){
+              
+              let youtube = "https://\(items[indexPath.row].strYoutube)"
+              let youTubeURL = URL(string: youtube)!
+              
+              if UIApplication.shared.canOpenURL(youTubeURL) {
+                  UIApplication.shared.open(youTubeURL)
+              } else {
+                  //redirect to safari because the user doesn't have Instagram
+                  UIApplication.shared.open(URL(string: "http://youTube.com/")!)
+              }
+          }else{
+              print("null")
+          }
+        }
+      
+      
+    }
 }

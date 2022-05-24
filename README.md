@@ -7,4 +7,5 @@ Swift Programming Language, Core Data, Alamofire, KingFisher and MVP architectur
 
 # Team Members:
 Ghada Mustafa
+
 Narges Nagy

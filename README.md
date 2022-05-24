@@ -1,5 +1,5 @@
-# SportsApp-iOS
-Sports On is an IOS application that shows a collection of sports and the leagues of this sport, the user is allowed to add any league to his favorite list
+# Sports On-iOS
+Sports On is an IOS sports application that shows a collection of sports and the leagues of this sport, the user is allowed to add any league to his favorite list
 and display the upcoming events and latest results for this leagues, also can view the teams in the league with details about each team.
 
 # Sports On Screens

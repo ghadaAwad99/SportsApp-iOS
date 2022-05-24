@@ -9,7 +9,7 @@
 import UIKit
 
 class TeamsDetailsViewController: UIViewController {
-
+    
     var team : Teams!
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -23,47 +23,66 @@ class TeamsDetailsViewController: UIViewController {
     }
     @IBAction func facebookButton(_ sender: Any) {
         
+        if(team.strFacebook != ""){
+        
         let facebook =   "https://\(self.team.strFacebook)"
         let facebookURL = URL(string: facebook)!
         
         if UIApplication.shared.canOpenURL(facebookURL) {
-                  UIApplication.shared.open(facebookURL)
+            UIApplication.shared.open(facebookURL)
         } else {
             //redirect to safari because the user doesn't have Instagram
-             UIApplication.shared.open(URL(string: "https://www.facebook.com/")!)
+            UIApplication.shared.open(URL(string: "https://www.facebook.com/")!)
+        }
+        } else{
+            print("Link is Empty")
         }
         
     }
     
-   
+    
     @IBAction func instgramButton(_ sender: Any) {
         
-        let instgram = "https://\(team.strInstagram)"
-        let instgramURL = URL(string: instgram)!
-        
-        if UIApplication.shared.canOpenURL(instgramURL) {
-            UIApplication.shared.open(instgramURL)
-        } else {
-            //redirect to safari because the user doesn't have Instagram
-            UIApplication.shared.open(URL(string: "http://instagram.com/")!)
+        if(team.strInstagram != ""){
+            
+            let instgram = "https://\(team.strInstagram)"
+            let instgramURL = URL(string: instgram)!
+            
+            if UIApplication.shared.canOpenURL(instgramURL) {
+                UIApplication.shared.open(instgramURL)
+            } else {
+                //redirect to safari because the user doesn't have Instagram
+                UIApplication.shared.open(URL(string: "http://instagram.com/")!)
+            }
+        }else{
+            print("Link is Empty")
         }
         
     }
     
     @IBAction func twitterButton(_ sender: Any) {
         
-        let twitter = "https://\(team.strTwitter)"
-        let twitterURL = URL(string: twitter)!
-        
-        if UIApplication.shared.canOpenURL(twitterURL) {
-            UIApplication.shared.open(twitterURL)
-        } else {
-            //redirect to safari because the user doesn't have Instagram
-            UIApplication.shared.open(URL(string: "https://www.twitter.com/")!)
+        if(team.strTwitter != ""){
+            
+            let twitter = "https://\(team.strTwitter)"
+            let twitterURL = URL(string: twitter)!
+            
+            if UIApplication.shared.canOpenURL(twitterURL) {
+                UIApplication.shared.open(twitterURL)
+            } else {
+                //redirect to safari because the user doesn't have Instagram
+                UIApplication.shared.open(URL(string: "https://www.twitter.com/")!)
+            }
+            
+        }else{
+            print("Link is Empty")
+            
         }
     }
     
     @IBAction func googleButton(_ sender: Any) {
+        
+        if(team.strWebsite != ""){
         
         let website = "https://\(team.strWebsite)"
         let websiteURL = URL(string: website)!
@@ -74,14 +93,17 @@ class TeamsDetailsViewController: UIViewController {
             //redirect to safari because the user doesn't have Instagram
             UIApplication.shared.open(URL(string: "https://www.google.com/")!)
         }
+        }else{
+             print("Link is Empty")
+        }
     }
-   
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         backgroundImage.kf.setImage(with: URL(string : (team.strTeamFanart4 ?? "")), placeholder: nil, options: nil, progressBlock: nil)
         teamBadgeImage.kf.setImage(with: URL(string : (team.strTeamBadge ?? "")), placeholder: nil, options: nil, progressBlock: nil)
         tShirtImage.kf.setImage(with: URL(string : (team.strTeamJersey ?? "")), placeholder: nil, options: nil, progressBlock: nil)
@@ -91,15 +113,15 @@ class TeamsDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -215,10 +215,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellImage" destination="ONe-Ie-nYl" id="LXt-sn-In6"/>
-                                            <outlet property="cellLable" destination="OW9-6D-Ys8" id="sIK-ab-R3a"/>
+                                            <outlet property="cellImage" destination="ONe-Ie-nYl" id="PcO-Z3-jAY"/>
+                                            <outlet property="cellLable" destination="OW9-6D-Ys8" id="pCy-l3-hpx"/>
                                             <outlet property="cellView" destination="06A-kP-mtM" id="xSq-Ll-kd3"/>
-                                            <outlet property="cellYoutubeButton" destination="wxc-GQ-dKu" id="GJ5-zO-1Of"/>
+                                            <outlet property="cellYoutubeButton" destination="wxc-GQ-dKu" id="WVm-Si-xac"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -467,7 +467,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htc-Vy-4hQ">
-                                                <rect key="frame" x="360" y="8" width="40" height="40"/>
+                                                <rect key="frame" x="350" y="8" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="favorite"/>
                                                 <connections>
@@ -476,6 +476,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <constraints>

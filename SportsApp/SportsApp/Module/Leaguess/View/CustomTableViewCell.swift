@@ -11,9 +11,10 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var cellLable: UILabel!
-    @IBOutlet weak var cellImage: UIImageView!
+    
     @IBOutlet weak var cellYoutubeButton: UIButton!
+    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var cellLable: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

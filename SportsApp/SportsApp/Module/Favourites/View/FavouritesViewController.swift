@@ -92,10 +92,38 @@ extension FavouritesViewController : UITableViewDataSource , UITableViewDelegate
         cell.cellImage.layer.cornerRadius = cell.cellImage.frame.width / 2
         cell.imageView?.clipsToBounds = true
         
+        cell.cellYoutubeButton.tag = indexPath.row
+               cell.cellYoutubeButton.addTarget(self, action: #selector(openYoutubeFav(sender:)), for: .touchUpInside)
+        
         
         
         return cell
         
+    }
+    
+    @objc func openYoutubeFav(sender: UIButton ) {
+                 
+         print("Tapped")
+        let senderPoint = sender.bounds.origin
+              let pointInTable = sender.convert(senderPoint, to: self.tableView)
+            if let indexPath = self.tableView.indexPathForRow(at: pointInTable) {
+                print(indexPath.row)
+          
+                if(leaguesList[indexPath.row].value(forKey: "strYoutube" ) as! String != ""){
+                    
+                    let youtube = "https://\(leaguesList[indexPath.row].value(forKey: "strYoutube") ?? "")"
+                    let youTubeURL = URL(string: youtube)!
+                    
+                    if UIApplication.shared.canOpenURL(youTubeURL) {
+                        UIApplication.shared.open(youTubeURL)
+                    } else {
+                        //redirect to safari because the user doesn't have Instagram
+                        UIApplication.shared.open(URL(string: "http://youTube.com/")!)
+                    }
+                }else{
+                    print("null")
+                }
+              }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

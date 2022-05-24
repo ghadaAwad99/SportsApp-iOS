@@ -348,8 +348,8 @@
 		7FB12172282D7E7D004D8039 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7FB12165282D6823004D8039 /* LaunchScreen.storyboard */,
 				7FB1215D282D67FB004D8039 /* Main.storyboard */,
+				7FB12165282D6823004D8039 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

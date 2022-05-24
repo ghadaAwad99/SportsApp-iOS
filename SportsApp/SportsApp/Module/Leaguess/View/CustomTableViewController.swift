@@ -94,7 +94,7 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
       @objc func openYoutube(_ sender: UIButton) {
                
        print("Tapped")
-      /*let senderPoint = sender.bounds.origin
+      let senderPoint = sender.bounds.origin
         let pointInTable = sender.convert(senderPoint, to: self.tableView)
       if let indexPath = self.tableView.indexPathForRow(at: pointInTable) {
           print(indexPath.row)
@@ -113,7 +113,7 @@ extension CustomTableViewController : UITableViewDataSource , UITableViewDelegat
           }else{
               print("null")
           }
-        }*/
+        }
       
       
     }
